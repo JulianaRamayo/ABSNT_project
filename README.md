@@ -1,2 +1,2 @@
-# A.B.S.N.T
+# ABSNT
  Attendance Biometric System Networking Tool
