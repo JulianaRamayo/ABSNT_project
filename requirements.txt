@@ -1,7 +1,0 @@
-requirements
-pip install keras-facenet
-pip install numpy
-pip install keras
-pip install matplotlib
-pip install opencv-python
-pip install tensorflow
