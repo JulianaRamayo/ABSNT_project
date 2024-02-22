@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: rgb(240, 223, 255);
+  }
+  
+  .navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .navbar li {
+    float: left;
+  }
+  
+  .navbar li.right {
+    float: right;
+  }
+  
+  .navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .navbar li a:hover {
+    background-color: #111;
+  }
+  
+  .home-btn {
+    margin-left: 20px; /* Espacio a la izquierda del botón de inicio */
+  }
+  /*Fondo */
+  body.home {
+    background-image: url('/static/ABSCENT.png'); /* Ruta a tu imagen de fondo */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
+    background-position: center top ; /* Centra la imagen en el fondo */
+  }
+  /*Conteiner signup*/
+  .container_signup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px; /* Ancho del contenedor */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container_signup h2 {
+    text-align: center;
+  }
+  
+  .container_signup form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container_signup input, .container button {
+    margin-bottom: 10px;
+  }
+  
+  /*Conteiner login*/
+  .container_login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px; /* Ancho del contenedor */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container_login h2 {
+    text-align: center;
+  }
+  
+  .container_login form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container_login input, .container button {
+    margin-bottom: 10px;
+  }

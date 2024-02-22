@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <title>Login</title>
+</head>
+<body>
+    <nav>
+        <ul class="navbar">
+          <li><a href="/" class="home-btn">Inicio</a></li>
+          <li class="right"><a href="/signup">Registrarse</a></li>
+          <li class="right"><a href="/">Regresar</a></li>
+        </ul>
+      </nav>
+
+    <div class="container_login">
+        <h2>Iniciar sesión:</h2>
+        <form action="/path-to-login" method="post">
+            <input type="text" placeholder="Nombre de Usuario" name="username" required><br>
+            <input type="password" placeholder="Contraseña" name="password" required><br>
+            <button type="submit">Ingresar</button>
+        </form>
+    </div>
+
+</body>
+</html>
