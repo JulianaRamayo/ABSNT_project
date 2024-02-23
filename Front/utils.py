@@ -52,13 +52,13 @@ def obtener_usuarios(email,password):
         # Por simplificación, aquí se compara directamente.
         
         if password.strip() == usuario["contraseña"]:
-            return "Usuario autenticado exitosamente."
+            return True
         else:
             # Retornar una página o mensaje de error de contraseña incorrecta
-            return "Error: La contraseña no coincide."
+            return False
     else:
         # Retornar una página o mensaje de error de usuario no encontrado
-        return "Error: El usuario no existe."
-    return 
+        return False
+    return False
 
 
