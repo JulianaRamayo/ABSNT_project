@@ -37,7 +37,7 @@ body {
   }
   /*Fondo */
   body.home {
-    background-image: url('/static/ABSCENT.png'); /* Ruta a tu imagen de fondo */
+    background-image: url('/static/ABSNT.png'); /* Ruta a tu imagen de fondo */
     background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
     background-position: center top ; /* Centra la imagen en el fondo */
   }
