@@ -22,6 +22,8 @@ ABSNT (Attendance Biometric System Networking Tool) is an innovative solution de
 ### Prerequisites
 - [Python 3.10 or higher](https://www.python.org/downloads/).
 - [MongoDB Atlas account](https://www.mongodb.com/cloud/atlas).
+- [Docker](https://docs.docker.com/get-docker/).
+- [Docker Compose](https://docs.docker.com/compose/install/).
 ### Installing Requirements
 Recommended to do on a dedicated python environment.
 
@@ -33,9 +35,9 @@ $ git clone <repository-url>
 ```bash
 $ cd paht-to-the-directory
 ```
-3. Install the required Python packages:
+3. Build the Docker Image:
 ```bash
-$ pip install -r requirements.txt
+$ docker-compose up --build
 ```
 ## Connecting to MongoDB
 To connect your application to MongoDB, follow these steps:
@@ -50,20 +52,28 @@ Ensure your MongoDB Atlas cluster is accessible from your IP address.
 
 ## How to use it
 
-With your environment active run the file 'App.py' inside the directory 'Front'.
+With your environment active run 'docker-compose up --build' or 'docker-compose up' to make the file 'App.py' inside the directory 'Front' work.
 You will se something like this on your terminal:
 ```
- * Serving Flask app 'App'
- * Debug mode: on
-WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
- * Running on http://127.0.0.1:5000
-Press CTRL+C to quit
- * Restarting with stat
- * Debugger is active!
- * Debugger PIN: xxx-xxx-xxx
+Creating network "absnt_project_default" with the default driver
+Creating absnt_project_flask-app ... done
+Attaching to absnt_project_flask-app
+flask-app_1  |  * Serving Flask app 'Front/App.py'
+flask-app_1  |  * Debug mode: off
+flask-app_1  | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+flask-app_1  |  * Running on all addresses (0.0.0.0)
+flask-app_1  |  * Running on http://127.0.0.1:8000
+flask-app_1  |  * Running on http://172.23.0.2:8000
+flask-app_1  | Press CTRL+C to quit
 ```
-Now you can open the link http://127.0.0.1:5000 on your browser and will see the main page of the app.
+Now you can open the link http://127.0.0.1:8000 on your browser and will see the main page of the app.
 
 You can sign up clicking on the button 'Registrarse', or login with 'Iniciar Sesion'. 
 
 Remember that the data that you write on 'Registrarse' will be sent to your Mongo database, so make sure to use it correctly.
+
+## Managing Docker Containers and Images
+- Stop the container:
+```bash
+$ docker-compose down
+```
