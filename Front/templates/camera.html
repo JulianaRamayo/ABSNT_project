@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Camera Access Demo</title>
+    <style>
+        #video {
+            border: 1px solid black;
+            width: 320px;
+            height: 240px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Camera Access</h1>
+    <video id="video" autoplay></video>
+
+    <script>
+        // Get references to necessary elements
+        const videoElement = document.getElementById('video');
+
+        // Function to handle camera stream
+        function startVideo(stream) {
+            videoElement.srcObject = stream;
+        }
+
+        // Function to handle errors 
+        function handleError(error) {
+            console.error('Error: ', error);
+        }
+
+        // Request camera access
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(startVideo)
+            .catch(handleError);
+    </script>
+</body>
+</html>

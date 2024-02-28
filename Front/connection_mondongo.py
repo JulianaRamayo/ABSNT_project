@@ -2,11 +2,10 @@ from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
 def connect_mondongo():
-    password = "your_password"
-    username = "your_username"
+    password = "papoche"
+    username = "juan"
     # Construye la cadena de conexión con la contraseña actualizada
-    uri = f"mongodb+srv://{username}:{password}@{cluster}.mongodb.net/?retryWrites=true&w=majority&appName={cluster}"
-
+    uri = f"mongodb+srv://{username}:{password}@clusterhageo.fiomhxd.mongodb.net/?retryWrites=true&w=majority&appName=ClusterHageo"
     # Create a new client and connect to the server
     client = MongoClient(uri, server_api=ServerApi('1'))
 
