@@ -1,94 +1,91 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: rgb(240, 223, 255);
-  }
-  
-  .navbar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-  }
-  
-  .navbar li {
-    float: left;
-  }
-  
-  .navbar li.right {
-    float: right;
-  }
-  
-  .navbar li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  .navbar li a:hover {
-    background-color: #111;
-  }
-  
-  .home-btn {
-    margin-left: 20px; /* Espacio a la izquierda del botón de inicio */
-  }
-  /*Fondo */
-  body.home {
-    background-image: url('/static/ABSNT.png'); /* Ruta a tu imagen de fondo */
-    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
-    background-position: center top ; /* Centra la imagen en el fondo */
-  }
-  /*Conteiner signup*/
-  .container_signup {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px; /* Ancho del contenedor */
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .container_signup h2 {
-    text-align: center;
-  }
-  
-  .container_signup form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .container_signup input, .container button {
-    margin-bottom: 10px;
-  }
-  
-  /*Conteiner login*/
-  .container_login {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px; /* Ancho del contenedor */
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .container_login h2 {
-    text-align: center;
-  }
-  
-  .container_login form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .container_login input, .container button {
-    margin-bottom: 10px;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #1d1a35; /* Dark background as in the image */
+}
+
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #29235c; /* Dark purple similar to the navbar in the image */
+}
+
+.navbar li {
+  float: left;
+}
+
+.navbar li.right {
+  float: right;
+}
+
+.navbar li a {
+  display: block;
+  color: #fcbf49; /* Bright orange for text, sampled from the image */
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar li a:hover {
+  background-color: #594a9c; /* Slightly lighter purple for hover, from the image */
+}
+
+
+.home-btn {
+  margin-left: 20px;
+}
+
+body.home {
+  background-image: url('/static/ABSNT.png');
+  background-size: contain; /* Ajusta la imagen para asegurar que se vea completa */
+  background-position: center center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-attachment: fixed; /* Mantiene la imagen estática al hacer scroll */
+}
+
+.container_signup, .container_login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  padding: 20px;
+  border: none; /* Removed border as it doesn't fit the theme */
+  border-radius: 5px;
+  background-color: #312244; /* Dark background for the modal, sampled from image */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Softer shadow for a subtle effect */
+}
+
+.container_signup h2, .container_login h2 {
+  text-align: center;
+  color: #ffffff; /* White color for text */
+}
+
+.container_signup form, .container_login form {
+  display: flex;
+  flex-direction: column;
+}
+
+.container_signup input, .container_login input, .container_signup button, .container_login button {
+  margin-bottom: 10px;
+  padding: 10px; /* Added padding for better spacing */
+  border: 1px solid #fcbf49; /* Border color sampled from the image */
+  background-color: #1f1a36; /* Background color for input fields */
+  color: #ffffff; /* Text color */
+}
+
+.container_signup input::placeholder, .container_login input::placeholder {
+  color: #b8b8d1; /* Placeholder text color sampled from the image */
+}
+
+.container_signup button, .container_login button {
+  background-color: #fcbf49; /* Button color sampled from the image */
+  color: #0a0a23; /* Text color for buttons */
+  border: none; /* No border for button */
+}
+
+.container_signup button:hover, .container_login button:hover {
+  background-color: #ffdf77; /* Lighter orange for hover state */
+}

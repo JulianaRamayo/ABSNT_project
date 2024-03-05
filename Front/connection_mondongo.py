@@ -2,8 +2,8 @@ from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
 def connect_mondongo():
-    password = "your_password"
-    username = "your_username"
+    password = "9999"
+    username = "sans"
     # Construye la cadena de conexión con la contraseña actualizada
     uri = f"mongodb+srv://{username}:{password}@{cluster}.mongodb.net/?retryWrites=true&w=majority&appName={cluster}"
 
