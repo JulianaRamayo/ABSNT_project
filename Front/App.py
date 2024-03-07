@@ -35,8 +35,11 @@ def signup():
         password = request.form['password']
         
         # Insert user into MongoDB using your existing function (with any necessary modifications)
-        utils.insertar_usuario(nombre,email, password)  # This may need to include email and any other adaptations
+        user_creation = utils.insertar_usuario(nombre,email, password)  # This may need to include email and any other adaptations
         
+        if not user_creation:
+            
+            return 'User already exists'
         # Redirect to login page after successful registration
         return redirect(url_for('login'))
     else:

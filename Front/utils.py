@@ -26,6 +26,12 @@ def insertar_usuario(nombre,email, contraseña):
         "contraseña": contraseña  # Convierte a lista para almacenar en MongoDB
     }
 
+    # Return false if user already exists
+    if collection.find_one({"email": email}):
+
+        return False
+    
+    
     # Inserta el usuario en la colección
     resultado = collection.insert_one(usuario)
 
