@@ -1,11 +1,11 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify, request
 #import pymongo
 #import bcrypt
 import utils
 from flask_session import Session  # You might need to install this with pip
 import os
 import secrets
-
+jsonify, request
 app = Flask(__name__)
 TOKEN = secrets.token_hex(16)
 
@@ -104,6 +104,44 @@ def lobby(token):
 @app.route('/token_not_successful')
 def token_no_valido():
     return render_template('token_not_successful.html')
+
+//AQUÍ HAGO LO DE LA UBICACIÓN CULEROS 
+
+MEXICO_BOUNDARIES = {
+    'north': 32.718653,
+    'south': 14.534548,
+    'west': -117.12776,
+    'east': -86.710571
+}
+
+def is_within_mexico(latitude, longitude):
+    """
+    Check if the given latitude and longitude are within the boundaries of Mexico.
+    """
+    return (MEXICO_BOUNDARIES['south'] <= latitude <= MEXICO_BOUNDARIES['north'] and
+            MEXICO_BOUNDARIES['west'] <= longitude <= MEXICO_BOUNDARIES['east'])
+
+# Endpoint for processing the attendance registration (POST request)
+@app.route('/register_attendance', methods=['POST'])
+def register_attendance():
+    data = request.get_json()
+    latitude = data.get('latitude')
+    longitude = data.get('longitude')
+
+    if is_within_mexico(latitude, longitude):
+        # The user is within Mexico, proceed with attendance registration
+        # Here you would add the code to register the attendance in the database
+        return jsonify({'success': True, 'message': 'Attendance registered for Mexico.'})
+    else:
+        # The user is not within Mexico, return an error message
+        return jsonify({'success': False, 'message': 'User not in Mexico.'})
+
+# Separate endpoint for displaying the attendance registration page (GET request)
+@app.route('/attendance')
+def attendance_page():
+    return render_template('register_attendance.html')
+ 
+//AQUÍ TERMINA LO DE LA UBICACIÓN UWU
 
 if __name__ == '__main__':
     app.run(port=8000, debug=True)

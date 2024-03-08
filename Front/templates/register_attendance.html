@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance Registration</title>
+</head>
+<body>
+
+<h2>Register Attendance</h2>
+<button onclick="getLocation()">Register My Attendance</button>
+
+<script>
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(sendPosition, showError);
+    } else {
+        alert("Geolocation is not supported by this browser.");
+    }
+}
+
+function sendPosition(position) {
+    fetch('/register_attendance', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+        }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if(data.success) {
+            alert("Attendance registered successfully!");
+        } else {
+            alert("You are not in the designated area.");
+        }
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+}
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            alert("User denied the request for Geolocation.");
+            break;
+        case error.POSITION_UNAVAILABLE:
+            alert("Location information is unavailable.");
+            break;
+        case error.TIMEOUT:
+            alert("The request to get user location timed out.");
+            break;
+        case error.UNKNOWN_ERROR:
+            alert("An unknown error occurred.");
+            break;
+    }
+}
+</script>
+
+</body>
+</html>
