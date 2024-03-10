@@ -1,48 +1,96 @@
-body {
-  font-family: Arial, sans-serif;
+* {
   margin: 0;
-  background-color: #1d1a35; /* Dark background as in the image */
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #020026, #42406f, #827fb8);
+  color: #ffffff;
+  padding-top: 60px; /* Space for fixed navbar */
 }
 
 .navbar {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  background-color: #29235c; /* Dark purple similar to the navbar in the image */
+  background-color: #29235c;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
 }
 
-.navbar li {
-  float: left;
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
 }
 
-.navbar li.right {
-  float: right;
+.nav-links,
+.nav-links li {
+  display: inline;
 }
 
-.navbar li a {
-  display: block;
-  color: #fcbf49; /* Bright orange for text, sampled from the image */
-  text-align: center;
-  padding: 14px 16px;
+.nav-links li a {
+  padding: 20px 15px;
+  display: inline-block;
+  color: #ffffff;
   text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.navbar li a:hover {
-  background-color: #594a9c; /* Slightly lighter purple for hover, from the image */
+.nav-links li a:hover,
+.nav-links li a:focus {
+  background-color: #594a9c;
+  color: #ff8a44;
 }
 
+.logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #fcbf49;
+  text-decoration: none;
+  display: inline-block;
+}
 
+/* Rest of your existing styles */
 .home-btn {
   margin-left: 20px;
 }
 
 body.home {
-  background-image: url('/static/ABSNT.png');
-  background-size: contain; /* Ajusta la imagen para asegurar que se vea completa */
-  background-position: center center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-attachment: fixed; /* Mantiene la imagen estática al hacer scroll */
+  /* Remove background-image property */
+  background: linear-gradient(to right, #020026, #42406f, #827fb8);
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-color: rgba(32, 32, 58, 0.5);
+}
+
+.background-image {
+  position: fixed; /* Fixed position to act as a background */
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1; /* Behind all content */
+  opacity: 0.5; /* Adjust as necessary for readability */
+  background: url('/static/ABSNT.png') center center no-repeat;
+  background-size: contain;
 }
 
 .container_signup, .container_login {
@@ -52,15 +100,15 @@ body.home {
   transform: translate(-50%, -50%);
   width: 300px;
   padding: 20px;
-  border: none; /* Removed border as it doesn't fit the theme */
+  border: none;
   border-radius: 5px;
-  background-color: #312244; /* Dark background for the modal, sampled from image */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Softer shadow for a subtle effect */
+  background-color: #312244;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .container_signup h2, .container_login h2 {
   text-align: center;
-  color: #ffffff; /* White color for text */
+  color: #ffffff;
 }
 
 .container_signup form, .container_login form {
@@ -70,22 +118,157 @@ body.home {
 
 .container_signup input, .container_login input, .container_signup button, .container_login button {
   margin-bottom: 10px;
-  padding: 10px; /* Added padding for better spacing */
-  border: 1px solid #fcbf49; /* Border color sampled from the image */
-  background-color: #1f1a36; /* Background color for input fields */
-  color: #ffffff; /* Text color */
+  padding: 10px;
+  border: 1px solid #fcbf49;
+  background-color: #1f1a36;
+  color: #ffffff;
 }
 
 .container_signup input::placeholder, .container_login input::placeholder {
-  color: #b8b8d1; /* Placeholder text color sampled from the image */
+  color: #b8b8d1;
 }
 
 .container_signup button, .container_login button {
-  background-color: #fcbf49; /* Button color sampled from the image */
-  color: #0a0a23; /* Text color for buttons */
-  border: none; /* No border for button */
+  background-color: #fcbf49;
+  color: #0a0a23;
+  border: none;
 }
 
 .container_signup button:hover, .container_login button:hover {
-  background-color: #ffdf77; /* Lighter orange for hover state */
+  background-color: #ffdf77;
 }
+
+/* Ensure any additional content on the page has space below the fixed navbar */
+.content {
+  padding: 1rem;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  text-align: left;
+  padding: 50px 20px;
+  min-height: 50vh; /* Adjust height as necessary */
+  color: #ffffff;
+}
+
+.hero-content, .hero-image {
+  flex: 1; /* Both children will take up equal space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically in the flex container */
+}
+
+.hero-image img {
+  width: 100%; /* Ensures the image is responsive */
+  max-width: 400px; /* Maximum size of the image */
+  margin: 0 auto; /* Centers the image in the flex item if it's not full width */
+}
+
+.hero-title {
+  font-size: 3rem; /* Adjust size as needed */
+  margin-bottom: 1rem;
+  align-self: center; /* Aligns the button in the center of the flex item */
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  align-self: center; /* Aligns the button in the center of the flex item */
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+}
+
+.btn-hero {
+  padding: 10px 30px;
+  background-color: #fcbf49;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  align-self: center; /* Aligns the button in the center of the flex item */
+}
+
+.btn-hero:hover {
+  background-color: #ffdf77;
+}
+
+.cta {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fcbf49;
+  color: #0a0a23;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.cta:hover {
+  background-color: #ffdf77;
+}
+
+.btn-primary {
+  padding: 10px 30px;
+  background-color: #fcbf49;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Features section styles */
+.features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.feature {
+  flex: 1;
+  min-width: 250px; /* Adjust to ensure readability and aesthetics */
+  max-width: 350px; /* Keeps the boxes from getting too wide on larger screens */
+  background: white;
+  padding: 2rem;
+  text-align: center; /* Centered text for a clean, modern aesthetic */
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  color: #333;
+  width: calc(33.333% - 2rem); /* Subtracting the gap from the total width */
+}
+
+.feature-title {
+  color: #020026; /* Dark color for headline readability */
+  font-size: 1.5rem; /* Clear and large font size for the title */
+  margin-bottom: 1rem; /* Space between title and subtitle */
+}
+
+.feature-subtitle {
+  color: #42406f; /* A color that stands out yet is easy on the eyes */
+  font-size: 1.2rem; /* Substantial size for importance but smaller than the title */
+  margin-bottom: 1.5rem; /* More space before the description for clear visual separation */
+}
+
+.feature h2 {
+  margin-bottom: 1rem;
+}
+
+.feature p {
+  color: #666;
+}
+
+

@@ -1,22 +1,58 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title>ABSNT Project</title>
   <link rel="stylesheet" href="/static/css/style.css">
 </head>
-<body class="home">
+<body>
 
-<nav>
-  <ul class="navbar">
-    <li><a href="/" class="home-btn">Inicio</a></li>
-    <li class="right"><a href="/login">Iniciar Sesión</a></li>
-    <li class="right"><a href="/signup">Registrarse</a></li>
-    <li class="right"><a href="/logout">Cerrar Sesión</a></li>
-  </ul>
-</nav>
+  <header>
+    <nav class="navbar">
+      <a href="/" class="logo">ABSNT</a>
+      <ul class="nav-links">
+        <li><a href="/login">Log in</a></li>
+        <li><a href="/signup" class="cta">Get started</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">Hello.</h1>
+        <p class="hero-subtitle">Managing your lists has never been so easy.</p>
+        <a href="/signup" class="btn-hero">Get started!</a>
+      </div>
+      <div class="hero-image">
+        <img src="/static/ABSNT.png">
+      </div>
+    </section>
+
+    <!-- Additional sections -->
+    <div class="features">
+      <section class="feature">
+        <h2>Touch & Go Attendance</h2>
+        <p class="feature-subtitle">Attendance with just a click</p>
+        <p>Just one touch from each student on a button and you can capture their attendance, simplifying your daily routine.</p>
+  </section>
+      </section>
+
+      <section class="feature">
+        <h2>Unified Class Records</h2>
+        <p class="feature-subtitle">All your attendance data, synchronized.</p>
+        <p>ABSNT effortlessly syncs attendance across all your devices, ensuring you have access to accurate class records anytime, anywhere.</p>
+  </section>
+      </section>
+
+      <section class="feature">
+        <h2>Error-Free Tracking</h2>
+        <p class="feature-subtitle">Eliminate manual mistakes.</p>
+      <p>Bid farewell to the errors of hand-written attendance sheets. With ABSNT, your records are always precise, allowing you to focus on teaching.</p>
+      </section>
+    </div>
+  </main>
 
 </body>
 </html>
