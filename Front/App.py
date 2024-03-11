@@ -105,7 +105,7 @@ def lobby(token):
 def token_no_valido():
     return render_template('token_not_successful.html')
 
-//AQUÍ HAGO LO DE LA UBICACIÓN CULEROS 
+#//AQUÍ HAGO LO DE LA UBICACIÓN CULEROS 
 
 MEXICO_BOUNDARIES = {
     'north': 32.718653,
@@ -141,7 +141,7 @@ def register_attendance():
 def attendance_page():
     return render_template('register_attendance.html')
  
-//AQUÍ TERMINA LO DE LA UBICACIÓN UWU
+#//AQUÍ TERMINA LO DE LA UBICACIÓN UWU
 
 if __name__ == '__main__':
     app.run(port=8000, debug=True)

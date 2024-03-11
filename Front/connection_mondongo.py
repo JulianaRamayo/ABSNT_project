@@ -3,8 +3,8 @@ from pymongo.server_api import ServerApi
 
 def connect_mondongo():
     # Create a new client and connect to the server
-    password = "papoche"
-    username = "juan"
+    password = ""
+    username = ""
     uri = f"mongodb+srv://{username}:{password}@clusterhageo.fiomhxd.mongodb.net/?retryWrites=true&w=majority&appName=ClusterHageo"
     client = MongoClient(uri, server_api=ServerApi('1'))
 
